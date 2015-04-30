@@ -1,3 +1,6 @@
+#DEVELOPERS
+Gabe Maze-Rogers - Software Architect 
+
 Angularjs Parse.com Boilerplate  [ ![Codeship Status for jbeurel/rider-ranking](https://codeship.com/projects/353a5570-49bb-0132-890d-62ad83b9cfff/status?branch=master)](https://codeship.com/projects/55198)
 ===============================
 
