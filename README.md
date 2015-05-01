@@ -1,6 +1,7 @@
 # DEVELOPERS
 Gabe Maze-Rogers (gmazerog@ucsd.edu) - Software Architect
 Paul Hoang (p3hoang@ucsd.edu) - Database Specialist
+Kevin Groarke (kgroarke@ucsd.edu) - Software Developer
 
 Angularjs Parse.com Boilerplate  [ ![Codeship Status for jbeurel/rider-ranking](https://codeship.com/projects/353a5570-49bb-0132-890d-62ad83b9cfff/status?branch=master)](https://codeship.com/projects/55198)
 ===============================
