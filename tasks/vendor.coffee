@@ -17,7 +17,7 @@ gulp.task 'vendor', (done) ->
     'bower_components/lodash/dist/lodash.js'
     'bower_components/angular-strap/dist/angular-strap.min.js'
     'bower_components/angular-strap/dist/angular-strap.tpl.min.js'
-    'bower_componenets/satellizer/satellizer.min.js'
+    'bower_components/satellizer/satellizer.min.js'
   ]
   .pipe(concat('vendor.js'))
   .on 'error', gutil.log
