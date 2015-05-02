@@ -12,13 +12,6 @@
     "moment": "2.6.x",
     "lodash": "~2.4.1",
     "angular-strap": "~2.2.1",
-    "satellizer": "0.10.x",
-    "async": "*",
-    "bcrypt": "*",
-    "body-parser": "*",
-    "express": "*",
-    "morgan": "*",
-    "jwt-simple": "*",
-    "request": "*",
+    "satellizer": "0.10.x"
   }
 }
