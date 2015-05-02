@@ -42,7 +42,7 @@ Enjoy!
 
   `npm run-script watch`
 
-Access to the application at this address: http://127.0.0.1:8008
+Access to the application at this address: localhost:8000 (previous ip: http://127.0.0.1:8008)
 The livereload update your browser each time you change source files.
 
 The Frontend source files are into the [src-public](./src-public) directory and compile to the public directory.
