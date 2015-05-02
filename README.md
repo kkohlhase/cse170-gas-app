@@ -1,4 +1,5 @@
 # DEVELOPERS
+Ian Broderick (ibroderi@ucsd.edu) - Database Specialist
 Gabe Maze-Rogers (gmazerog@ucsd.edu) - Software Architect
 Paul Hoang (p3hoang@ucsd.edu) - Database Specialist
 Kevin Groarke (kgroarke@ucsd.edu) - Software Developer
