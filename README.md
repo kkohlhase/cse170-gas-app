@@ -6,6 +6,7 @@ Kevin Groarke (kgroarke@ucsd.edu) - Software Developer
 Kurt Lang (kalang@ucsd.edu) - Senior Systems Analyst 
 Dylan McNamara (dmcnamar@ucsd.edu) - Project Manager
 Timmy Ngo	(tin021@ucsd.edu) - Algorithms Specialist
+Sean Ippolito  (sippolit@ucsd.edu) - Business Analyst
 
 Angularjs Parse.com Boilerplate  [ ![Codeship Status for jbeurel/rider-ranking](https://codeship.com/projects/353a5570-49bb-0132-890d-62ad83b9cfff/status?branch=master)](https://codeship.com/projects/55198)
 ===============================
