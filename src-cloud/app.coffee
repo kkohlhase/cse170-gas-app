@@ -1,9 +1,25 @@
+### Core Modules ###
+path = require('path');
+qs = require('querystring');
 
-# These two lines are required to initialize Express in Cloud Code.
+### Public modules from npm ###
+async = require('async');
+bcrypt = require('bcryptjs');
+bodyParser = require('body-parser');
 express = require("express")
-app = express()
+logger = require('morgan');
+jwt = require('jwt-simple');
+moment = require('moment');
+request = require('request');
+
+### Custom Modules ###
+config = require('cloud/config.js');
 parseAdaptor = require("cloud/prerender-parse.js")
 app.use require("cloud/prerenderio.js").setAdaptor(parseAdaptor(Parse)).set("prerenderToken", "OnBuGOnWjpPCOA2oC91v")
+
+# These two lines are required to initialize Express in Cloud Code.
+app = express()
+
 
 # Global app configuration section
 app.set "views", "cloud/views" # Specify the folder to find templates
@@ -21,6 +37,18 @@ app.use express.bodyParser() # Middleware for reading request body
 #   // POST http://example.parseapp.com/test (with request body "message=hello")
 #   res.send(req.body.message);
 # });
+
+app.post('/auth/google', (request, response) ->
+    accessTokenUrl = 'https://accounts.google.com/o/oauth2/token'
+    peopleApiUrl = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect'
+    params =
+      code: req.body.code,
+      client_id: req.body.clientId,
+      client_secret: config.GOOGLE_SECRET,
+      redirect_uri: req.body.redirectUri,
+      grant_type: 'authorization_code'
+
+)
 
 # Attach the Express app to Cloud Code.
 app.listen()
