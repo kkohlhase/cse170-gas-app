@@ -14,9 +14,12 @@ html(lang="en", ng-app="angularParseBoilerplate")
           i(class="ion-ios7-pulse-strong") SyncNStudy
       ul(class="nav navbar-nav")
         li
-          a(href="/") Home
+          a(ui-sref ="home") Home
         li(ng-if="isAuthenticated()")
-          a Profile
+          a(ui-sref = "profile") Profile
+        li(ng-if="isAuthenticated()")
+          a(ui-sref = "classes") Classes
+        li(ng-if="isAuthenicated()")
       ul(ng-if="!isAuthenticated()" class="nav navbar-nav pull-right")
         li
           a(ui-sref="login") Login

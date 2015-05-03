@@ -32,6 +32,18 @@ app.config (
     url: '/task'
     controller: 'TaskCtrl'
     templateUrl: 'task.html'
+  .state 'home',
+    url: '/home'
+    contoller: 'HomeCtrl'
+    templateUrl: 'home.html'
+  .state 'profile',
+    url: '/profile'
+    controller: 'ProfileCtrl'
+    templateUrl: 'profile.html'
+  .state 'classes',
+    url: '/classes'
+    controller: 'ClassesCtrl'
+    templateUrl: 'classes.html'
 
   ParseProvider.initialize(
     "H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", # Application ID
