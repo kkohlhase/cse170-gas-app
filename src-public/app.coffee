@@ -44,6 +44,10 @@ app.config (
     url: '/classes'
     controller: 'ClassesCtrl'
     templateUrl: 'classes.html'
+  .state 'signup',
+      url: '/signup'
+      controller: 'SignupCtrl'
+      templateUrl: 'signup.html'
 
   ParseProvider.initialize(
     "H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", # Application ID

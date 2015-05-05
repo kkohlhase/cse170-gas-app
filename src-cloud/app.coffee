@@ -3,19 +3,12 @@ path = require('path');
 qs = require('querystring');
 
 ### Public modules from npm ###
-async = require('async');
-bcrypt = require('bcryptjs');
-bodyParser = require('body-parser');
 express = require("express")
-logger = require('morgan');
-jwt = require('jwt-simple');
-moment = require('moment');
-request = require('request');
 
 ### Custom Modules ###
-config = require('cloud/config.js');
+#config = require('cloud/config.js');
 parseAdaptor = require("cloud/prerender-parse.js")
-app.use require("cloud/prerenderio.js").setAdaptor(parseAdaptor(Parse)).set("prerenderToken", "OnBuGOnWjpPCOA2oC91v")
+#app.use require("cloud/prerenderio.js").setAdaptor(parseAdaptor(Parse)).set("prerenderToken", "OnBuGOnWjpPCOA2oC91v")
 
 # These two lines are required to initialize Express in Cloud Code.
 app = express()
@@ -38,6 +31,24 @@ app.use express.bodyParser() # Middleware for reading request body
 #   res.send(req.body.message);
 # });
 
+#Parse.initialize("H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", "muAXvNfPtfay3imFx07NG0YT2ac2Z33qdrsy9fLV")
+
+app.post('/auth/signup', (req, res) ->
+    username = req.body.email
+    password = req.body.password
+
+    user = new Parse.User()
+    user.set('username', username)
+    user.set('password', password)
+    
+    user.signUp().then((user) ->
+        res.redirect('/')
+    , (error) ->
+        res.render('signup', flash: error.messsage)
+    )
+)
+
+###
 app.post('/auth/google', (request, response) ->
     accessTokenUrl = 'https://accounts.google.com/o/oauth2/token'
     peopleApiUrl = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect'
@@ -49,6 +60,7 @@ app.post('/auth/google', (request, response) ->
       grant_type: 'authorization_code'
 
 )
+###
 
 # Attach the Express app to Cloud Code.
 app.listen()

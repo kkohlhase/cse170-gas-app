@@ -17,9 +17,9 @@
     "bcryptjs": "~2.0.1",
     "request": "~2.40.0",
     "express": "~4.12.3",
-    "jwt-simple": "https://github.com/hokaccha/node-jwt-simple/",
-    "body-parser": "https://github.com/expressjs/body-parser/",
-    "morgan": "https://github.com/expressjs/morgan",
-    "moment": "https://github.com/moment/moment"
+    "jwt-simple": "https://github.com/hokaccha/node-jwt-simple.git",
+    "body-parser": "https://github.com/expressjs/body-parser.git",
+    "morgan": "https://github.com/expressjs/morgan.git",
+    "moment": "https://github.com/moment/moment.git"
   }
 }
