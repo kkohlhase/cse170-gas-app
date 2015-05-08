@@ -40,9 +40,9 @@ app.post('/auth/signup', (req, res) ->
     user = new Parse.User()
     user.set('username', username)
     user.set('password', password)
-    
+
     user.signUp().then((user) ->
-        res.redirect('/')
+        res.render('home')
     , (error) ->
         res.render('signup', flash: error.messsage)
     )
