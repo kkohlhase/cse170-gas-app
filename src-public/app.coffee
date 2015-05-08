@@ -37,7 +37,7 @@ app.config (
     controller: 'TaskCtrl'
     templateUrl: 'task.html'
   .state 'home',
-    url: '/home'
+    url: '/'
     contoller: 'HomeCtrl'
     templateUrl: 'home.html'
   .state 'profile',

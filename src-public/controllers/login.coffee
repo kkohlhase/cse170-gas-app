@@ -1,4 +1,4 @@
-app.controller 'LoginCtrl', ($scope, $auth, $alert, $window) ->
+app.controller 'LoginCtrl', ($scope, $auth, $window, $alert) ->
   $scope.login = ->
     $auth.login(
       email: $scope.email
