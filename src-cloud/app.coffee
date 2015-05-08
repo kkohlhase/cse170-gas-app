@@ -31,8 +31,6 @@ app.use express.bodyParser() # Middleware for reading request body
 #   res.send(req.body.message);
 # });
 
-#Parse.initialize("H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", "muAXvNfPtfay3imFx07NG0YT2ac2Z33qdrsy9fLV")
-
 app.post('/auth/signup', (req, res) ->
     username = req.body.email
     password = req.body.password
@@ -42,10 +40,18 @@ app.post('/auth/signup', (req, res) ->
     user.set('password', password)
 
     user.signUp().then((user) ->
-        res.render('home')
+        res.send(token: user.getSessionToken())
     , (error) ->
         res.render('signup', flash: error.messsage)
     )
+)
+
+app.post('/auth/login', (req, res) ->
+  Parse.User.logIn(req.body.email, req.body.password).then((user) ->
+    res.send(token: user.getSessionToken())
+  , (error) ->
+    res.render('signup', flash: error.messsage)
+  )
 )
 
 ###

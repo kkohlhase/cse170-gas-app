@@ -28,6 +28,10 @@ app.config (
     url: '/login',
     controller: 'LoginCtrl'
     templateUrl: 'login.html'
+  .state 'logout',
+    url: '/logout'
+    controller: 'LogoutCtrl'
+    templateUrl: 'home.html'
   .state 'task',
     url: '/task'
     controller: 'TaskCtrl'

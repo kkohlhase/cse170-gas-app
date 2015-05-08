@@ -25,7 +25,7 @@ html(lang="en", ng-app="angularParseBoilerplate")
           a(ui-sref="signup") Sign up
       ul(ng-if="isAuthenticated()" class="nav navbar-nav pull-right")
         li
-          a Logout
+          a(ui-sref="logout") logout
     
     main.container(ui-view)
 

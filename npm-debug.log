@@ -72,41 +72,26 @@
 34 verbose rebuildBundles   'gulp-webserver',
 34 verbose rebuildBundles   'jade',
 34 verbose rebuildBundles   'lodash',
-34 verbose rebuildBundles   'morgan',
 34 verbose rebuildBundles   'run-sequence',
 34 verbose rebuildBundles   'webdriver-manager' ]
-35 verbose rebuild bundle C:\Users\Kevin\Desktop\Project\project2\syncnstudy\node_modules\morgan
-36 info build C:\Users\Kevin\Desktop\Project\project2\syncnstudy\node_modules\morgan
-37 info preinstall morgan@1.5.2
-38 verbose linkStuff [ false,
-38 verbose linkStuff   false,
-38 verbose linkStuff   false,
-38 verbose linkStuff   'C:\\Users\\Kevin\\Desktop\\Project\\project2\\syncnstudy\\node_modules' ]
-39 info linkStuff morgan@1.5.2
-40 verbose linkBins morgan@1.5.2
-41 verbose linkMans morgan@1.5.2
-42 verbose rebuildBundles morgan@1.5.2
-43 verbose rebuildBundles [ 'basic-auth', 'debug', 'depd', 'on-finished' ]
-44 info install morgan@1.5.2
-45 info postinstall morgan@1.5.2
-46 info install angular-github-pages@0.0.0
-47 info postinstall angular-github-pages@0.0.0
-48 verbose unsafe-perm in lifecycle true
-49 info angular-github-pages@0.0.0 Failed to exec postinstall script
-50 error angular-github-pages@0.0.0 postinstall: `bower install | xargs echo && gulp build`
-50 error Exit status 8
-51 error Failed at the angular-github-pages@0.0.0 postinstall script.
-51 error This is most likely a problem with the angular-github-pages package,
-51 error not with npm itself.
-51 error Tell the author that this fails on your system:
-51 error     bower install | xargs echo && gulp build
-51 error You can get their info via:
-51 error     npm owner ls angular-github-pages
-51 error There is likely additional logging output above.
-52 error System Windows_NT 6.1.7601
-53 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
-54 error cwd C:\Users\Kevin\Desktop\Project\project2\syncnstudy
-55 error node -v v0.10.32
-56 error npm -v 1.4.28
-57 error code ELIFECYCLE
-58 verbose exit [ 1, true ]
+35 info install angular-github-pages@0.0.0
+36 info postinstall angular-github-pages@0.0.0
+37 verbose unsafe-perm in lifecycle true
+38 info angular-github-pages@0.0.0 Failed to exec postinstall script
+39 error angular-github-pages@0.0.0 postinstall: `bower install | xargs echo && gulp build`
+39 error Exit status 8
+40 error Failed at the angular-github-pages@0.0.0 postinstall script.
+40 error This is most likely a problem with the angular-github-pages package,
+40 error not with npm itself.
+40 error Tell the author that this fails on your system:
+40 error     bower install | xargs echo && gulp build
+40 error You can get their info via:
+40 error     npm owner ls angular-github-pages
+40 error There is likely additional logging output above.
+41 error System Windows_NT 6.1.7601
+42 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+43 error cwd C:\Users\Kevin\Desktop\Project\project2\syncnstudy
+44 error node -v v0.10.32
+45 error npm -v 1.4.28
+46 error code ELIFECYCLE
+47 verbose exit [ 1, true ]
