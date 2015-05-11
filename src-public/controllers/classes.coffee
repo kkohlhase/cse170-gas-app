@@ -1,1 +1,1 @@
-app.controller "ClassesCtrl", ($scope) ->
+app.controller 'ClassesCtrl', ($scope) ->

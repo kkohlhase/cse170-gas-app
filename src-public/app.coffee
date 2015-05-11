@@ -52,6 +52,10 @@ app.config (
       url: '/signup'
       controller: 'SignupCtrl'
       templateUrl: 'signup.html'
+  .state 'invites',
+    url: '/invites'
+    controller: 'InvitesCtrl'
+    templateUrl: 'invites.html'
 
   ParseProvider.initialize(
     "H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", # Application ID
