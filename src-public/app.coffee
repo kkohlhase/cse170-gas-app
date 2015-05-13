@@ -56,7 +56,10 @@ app.config (
     url: '/invites'
     controller: 'InvitesCtrl'
     templateUrl: 'invites.html'
-
+  .state 'forgotmypassword',
+    url: '/forgotmypassword'
+    controller: 'ResetPasswordCtrl'
+    templateUrl: 'resetPassword.html'
   ParseProvider.initialize(
     "H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", # Application ID
     "ZKYUey7Kir4adRsIEfPFzlUtrh2FwwjC3dfT8yNB"  # REST API Key
