@@ -56,6 +56,7 @@ app.config (
     url: '/invites'
     controller: 'InvitesCtrl'
     templateUrl: 'invites.html'
+    
   .state 'forgotmypassword',
     url: '/forgotmypassword'
     controller: 'ResetPasswordCtrl'
