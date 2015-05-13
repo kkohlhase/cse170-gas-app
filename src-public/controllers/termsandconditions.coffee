@@ -1,0 +1,1 @@
+app.controller 'TermsCondCtrl', ($scope, $auth, $alert) ->

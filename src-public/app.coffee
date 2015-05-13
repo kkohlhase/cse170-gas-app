@@ -56,6 +56,10 @@ app.config (
     url: '/invites'
     controller: 'InvitesCtrl'
     templateUrl: 'invites.html'
+  .state 'termsandconditions',
+    url: '/termsandconditions'
+    controller: 'TermsCondCtrl'
+    templateUrl: 'termsandconditions.html'
 
   ParseProvider.initialize(
     "H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", # Application ID
