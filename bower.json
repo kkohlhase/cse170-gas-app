@@ -9,7 +9,7 @@
     "angular-parse": "*",
     "angulartics": "~0.17.1",
     "bootstrap": "3.2.x",
-    "moment": "2.6.x",
+    "moment": "https://github.com/moment/moment.git",
     "lodash": "~2.4.1",
     "angular-strap": "~2.2.1",
     "satellizer": "0.10.x",
@@ -20,6 +20,6 @@
     "jwt-simple": "https://github.com/hokaccha/node-jwt-simple.git",
     "body-parser": "https://github.com/expressjs/body-parser.git",
     "morgan": "https://github.com/expressjs/morgan.git",
-    "moment": "https://github.com/moment/moment.git"
+    "angular-bootstrap-calendar": "~0.10.2"
   }
 }
