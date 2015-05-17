@@ -64,10 +64,10 @@ app.config (
     url: '/privacypolicy'
     controller: 'PrivacyPolicyCtrl'
     templateUrl: 'privacypolicy.html'
-  .state 'forgotmypassword',
-    url: '/forgotmypassword'
+  .state 'reset_password',
+    url: '/reset_password'
     controller: 'ResetPasswordCtrl'
-    templateUrl: 'resetPassword.html'
+    templateUrl: 'reset_password.html'
   ParseProvider.initialize(
     "H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", # Application ID
     "ZKYUey7Kir4adRsIEfPFzlUtrh2FwwjC3dfT8yNB"  # REST API Key
