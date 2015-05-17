@@ -60,6 +60,10 @@ app.config (
     url: '/termsandconditions'
     controller: 'TermsCondCtrl'
     templateUrl: 'termsandconditions.html'
+  .state 'privacypolicy',
+    url: '/privacypolicy'
+    controller: 'PrivacyPolicyCtrl'
+    templateUrl: 'privacypolicy.html'
   .state 'forgotmypassword',
     url: '/forgotmypassword'
     controller: 'ResetPasswordCtrl'

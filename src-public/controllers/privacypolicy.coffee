@@ -1,0 +1,1 @@
+app.controller 'PrivacyPolicyCtrl', ($scope, $auth, $alert) ->
