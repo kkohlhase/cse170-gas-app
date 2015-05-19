@@ -1,1 +1,15 @@
-h1 this is the profile
+doctype html
+body
+    h1(align='center') Profile
+    img(align='center' alt='Avatar', height='200', width='200', src='http://dreamatico.com/data_images/kitten/kitten-2.jpg')
+    br
+    form(action='')
+        | Name:
+        input(type='text', name='name', value='Gary G')
+        br
+        | Email:
+        input(type='email', name='email', value='example@ucsd.edu')
+        br
+        br
+        input(type='button', value='Update')
+        input(type='button', value='Cancel')

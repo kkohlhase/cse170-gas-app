@@ -57,6 +57,11 @@ The Backend source files are into the [src-cloud](./src-cloud) directory and com
 
   `npm run-script deploy-parse`
 
+  #If you are having trouble with this, I have found that this also works:
+     'npm run-script watch'
+     'parse deploy'
+     (For some reason, it only works when I do the run-script command first)
+
 # Deploy on Github Pages (alternative)
 
 You can also deploy the frontend on the Github Pages of your repo by launching this command:
