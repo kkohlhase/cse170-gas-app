@@ -10,6 +10,7 @@ app = angular.module 'angularParseBoilerplate', [
   'angulartics'
   'angulartics.google.analytics'
   'satellizer'
+  'mwl.calendar'
   'mgcrea.ngStrap'
 ]
 
@@ -42,6 +43,9 @@ app.config (
       '':
         templateUrl: 'home.html'
         controller: 'HomeCtrl',
+      'calendar@home':
+        templateUrl: 'calendar.html'
+        contoller: 'CalendarCtrl',
       'signup@home':
         templateUrl: 'signup.html'
         controller: 'SignupCtrl',

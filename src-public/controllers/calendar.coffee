@@ -1,4 +1,4 @@
-app.controller 'HomeCtrl', ($scope, moment) ->
+app.controller 'CalendarCtrl', ($scope, moment) ->
   $scope.calendarView = 'month'
   $scope.shit = "fuck the police"
   $scope.calendarDay = new Date()
