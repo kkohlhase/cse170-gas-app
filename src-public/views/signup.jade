@@ -2,13 +2,8 @@ html
   body
     .container
       .row
-        .jumbotron
-            h1.text-center About SyncNStudy
-            p.
-              SyncNStudy is a revolutionary way of approaching studying in college. It allows you to import your schedule and meet up with fellow students and form study sessions like no other app has done before. 
         .center-form.panel
           .panel-body
-
             h2.text-center Sign Up
             form(method='post', ng-submit='signup()', name='signupForm')
               .form-group.has-feedback(ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }")
