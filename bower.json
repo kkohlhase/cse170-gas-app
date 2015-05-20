@@ -20,6 +20,11 @@
     "jwt-simple": "https://github.com/hokaccha/node-jwt-simple.git",
     "body-parser": "https://github.com/expressjs/body-parser.git",
     "morgan": "https://github.com/expressjs/morgan.git",
-    "angular-bootstrap-calendar": "~0.10.2"
+    "angular-bootstrap-calendar": "https://github.com/mattlewis92/angular-bootstrap-calendar.git"
+  },
+  "resolutions": {
+    "angular": ">= 1.1.5",
+    "bootstrap": "~3.3.4",
+    "moment": "2.6.x"
   }
 }

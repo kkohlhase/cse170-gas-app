@@ -1,9 +1,5 @@
 @import "../../bower_components/bootstrap/less/bootstrap.less";
 
-.jumbotron {
-    background-color: dodgerblue;
-}
-
 .hugeAssText {
   font-size: 15rem;
   font-weight: 900;
@@ -16,11 +12,40 @@
   -webkit-animation:myfirst 1s infinite; /* Safari and Chrome */
 }
 
+.calenderText{
+    font-size: 4rem;
+    font-weight: 100;
+    text-align: left;
+    color: white;
+    background: dodgerblue;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    //animation: mySecond 2s;
+    //-moz-animation:mySecond 2s infinite;
+    //-webkit-animation:mySecond 2s infinite;
+}
+.calenderBackground{
+
+}
 
 @keyframes myfirst {
   0%   {color: yellow; background:red;}
   50%  {color: red; background:yellow;}
   100%   {color: yellow; background:red;}
+}
+@keyframes mySecond {
+    0%   {color: yellow; background:lightskyblue;}
+    50%  {color: red; background:lightskyblue;}
+    100%   {color: yellow; background:lime;}
+
+}
+@-webkit-keyframes mySecond /* Safari and Chrome */
+{
+    0%   {color: yellow; background:lightskyblue}
+    50%  {color: red; background:lightskyblue;}
+    100%   {color: lightskyblue; background:lime;}
 }
 
 @-moz-keyframes myfirst /* Firefox */
@@ -39,8 +64,8 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    /*background-image: url("../assets/img/blur-background.jpg")*/
-    background-color: ghostwhite;
+    background-image: url("../assets/img/blur-background.jpg")
+    /*background-image: url(http://www.htbackdrops.org/v2/albums/userpics/10046/orig_NSYNC.jpg);*/
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;

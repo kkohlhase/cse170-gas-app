@@ -10,7 +10,9 @@ app = angular.module 'angularParseBoilerplate', [
   'angulartics'
   'angulartics.google.analytics'
   'satellizer'
+  'mwl.calendar'
   'mgcrea.ngStrap'
+  'mwl.calendar'
 ]
 
 app.config (
@@ -36,10 +38,26 @@ app.config (
     url: '/task'
     controller: 'TaskCtrl'
     templateUrl: 'task.html'
-  .state 'home',
+  .state 'home', {
     url: '/'
-    contoller: 'HomeCtrl'
-    templateUrl: 'home.html'
+    views: {
+      '':
+        templateUrl: 'home.html'
+        controller: 'HomeCtrl',
+      'calendar@home':
+        templateUrl: 'calendar.html'
+        contoller: 'CalendarCtrl',
+      'signup@home':
+        templateUrl: 'signup.html'
+        controller: 'SignupCtrl',
+      'about@home':
+        templateUrl: 'about.html'
+        controller: 'AboutCtrl',
+      'calendar@home':
+        templateUrl: 'calendar.html'
+        controller: 'CalendarCtrl'
+    }
+  }
   .state 'profile',
     url: '/profile'
     controller: 'ProfileCtrl'
@@ -49,9 +67,9 @@ app.config (
     controller: 'ClassesCtrl'
     templateUrl: 'classes.html'
   .state 'signup',
-      url: '/signup'
-      controller: 'SignupCtrl'
-      templateUrl: 'signup.html'
+    url: '/signup'
+    controller: 'SignupCtrl'
+    templateUrl: 'signup.html'
   .state 'invites',
     url: '/invites'
     controller: 'InvitesCtrl'
@@ -68,6 +86,13 @@ app.config (
     url: '/reset_password'
     controller: 'ResetPasswordCtrl'
     templateUrl: 'reset_password.html'
+  .state 'addclass',
+    url: '/addclass'
+    controller: 'AddClassCtrl'
+    templateUrl: 'addclass.html'
+
+  $urlRouterProvider.otherwise '/'
+
   ParseProvider.initialize(
     "H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", # Application ID
     "ZKYUey7Kir4adRsIEfPFzlUtrh2FwwjC3dfT8yNB"  # REST API Key
