@@ -1,6 +1,9 @@
 app.controller 'CalendarCtrl', ($scope, moment) ->
   $scope.calendarView = 'month'
+<<<<<<< HEAD
   $scope.shit = "fuck the police"
+=======
+>>>>>>> ac34261edd27c0d7e185b7902ba393d6d12384a9
   $scope.calendarDay = new Date()
   $scope.events = [
     {
@@ -22,4 +25,8 @@ app.controller 'CalendarCtrl', ($scope, moment) ->
       endsAt: moment().startOf('day').add(19, 'hours').toDate()
     }
   ]
+<<<<<<< HEAD
   return
+=======
+  return
+>>>>>>> ac34261edd27c0d7e185b7902ba393d6d12384a9

@@ -12,6 +12,7 @@ app = angular.module 'angularParseBoilerplate', [
   'satellizer'
   'mwl.calendar'
   'mgcrea.ngStrap'
+  'mwl.calendar'
 ]
 
 app.config (
@@ -51,7 +52,10 @@ app.config (
         controller: 'SignupCtrl',
       'about@home':
         templateUrl: 'about.html'
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+      'calendar@home':
+        templateUrl: 'calendar.html'
+        controller: 'CalendarCtrl'
     }
   }
   .state 'profile',
@@ -63,9 +67,9 @@ app.config (
     controller: 'ClassesCtrl'
     templateUrl: 'classes.html'
   .state 'signup',
-      url: '/signup'
-      controller: 'SignupCtrl'
-      templateUrl: 'signup.html'
+    url: '/signup'
+    controller: 'SignupCtrl'
+    templateUrl: 'signup.html'
   .state 'invites',
     url: '/invites'
     controller: 'InvitesCtrl'
@@ -82,6 +86,10 @@ app.config (
     url: '/reset_password'
     controller: 'ResetPasswordCtrl'
     templateUrl: 'reset_password.html'
+  .state 'addclass', 
+    url: '/addclass'
+    controller: 'AddClassCtrl'
+    templateUrl: 'addclass.html'
 
   $urlRouterProvider.otherwise '/'
 
