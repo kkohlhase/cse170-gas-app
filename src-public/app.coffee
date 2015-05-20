@@ -36,10 +36,20 @@ app.config (
     url: '/task'
     controller: 'TaskCtrl'
     templateUrl: 'task.html'
-  .state 'home',
+  .state 'home', {
     url: '/'
-    contoller: 'HomeCtrl'
-    templateUrl: 'home.html'
+    views: {
+      '':
+        templateUrl: 'home.html'
+        controller: 'HomeCtrl',
+      'signup@home':
+        templateUrl: 'signup.html'
+        controller: 'SignupCtrl',
+      'about@home':
+        templateUrl: 'about.html'
+        controller: 'AboutCtrl'
+    }
+  }
   .state 'profile',
     url: '/profile'
     controller: 'ProfileCtrl'
@@ -68,6 +78,9 @@ app.config (
     url: '/reset_password'
     controller: 'ResetPasswordCtrl'
     templateUrl: 'reset_password.html'
+
+  $urlRouterProvider.otherwise '/'
+
   ParseProvider.initialize(
     "H3mf7FlzKF0fZdNIvGntzqI1TWn0y3gWXjB2FIth", # Application ID
     "ZKYUey7Kir4adRsIEfPFzlUtrh2FwwjC3dfT8yNB"  # REST API Key

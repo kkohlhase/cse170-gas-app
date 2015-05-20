@@ -4,10 +4,7 @@
 doctype html
 html(lang="en")
 head
-   title= pageTitle
-   script(type='text/javascript').
-      if (foo) {
-         bar(1 + 5)
-      }
+
 body
-  img(src = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRm6KdQ5Qlj4fg0t2TIbjVj46nxSmkfjlaAtZDNRnoDzBcD9MnSpt6KU4A")
+  div(ui-view="about@home")
+  div(ui-view="signup@home")
