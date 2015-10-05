@@ -9,65 +9,27 @@ Timmy Ngo	(tin021@ucsd.edu) - Algorithms Specialist
 Michelle Bui    (m4bui@ucsd.edu) - User Interface Speialist 
 Sean Ippolito  (sippolit@ucsd.edu) - Business Analyst
 
-Angularjs Parse.com Boilerplate  [ ![Codeship Status for jbeurel/rider-ranking](https://codeship.com/projects/353a5570-49bb-0132-890d-62ad83b9cfff/status?branch=master)](https://codeship.com/projects/55198)
+[Agency](http://startbootstrap.com/template-overviews/agency/) is a one page agency portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline, and a working PHP contact form.
 
-[Demo :-)](http://ng-parse-boilerplate.parseapp.com)
+## Getting Started
 
-![Demo Screenshot](./doc/angular-parse-boilerplate.png)
+To use this theme, choose one of the following options to get started:
+* Download the latest release on Start Bootstrap
+* Fork this repository on GitHub
 
-# Technologies
+## Bugs and Issues
 
-## Languages
-- [Coffeescript](http://coffeescript.org/)
-- [Jade](http://jade-lang.com/)
-- [Less](http://www.lesscss.org/)
+Have a bug or an issue with this theme? [Open a new issue](https://github.com/IronSummitMedia/startbootstrap-agency/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/agency/).
 
-## Framework|Tools
-- [AngularJS](http://angularjs.org/)
-- [Bootstrap3](http://getbootstrap.com/)
-- [Gulp](http://gulpjs.com/)
-- Livereload
+## Creator
 
-# Requirements
+Start Bootstrap was created by and is maintained by **David Miller**, Managing Partner at [Iron Summit Media Strategies](http://www.ironsummitmedia.com/).
 
-- [NodeJS](http://nodejs.org/)
+* https://twitter.com/davidmillerskt
+* https://github.com/davidtmiller
 
-# Installation
+Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
-  `npm install`
+## Copyright and License
 
-# Configuration
-
-Edit the [config/global.json](./config/global.json) file to write the configuration of your Parse.com project in order to use the Parse's CLI.
-Edit the [src-public/app.coffee](./src-public/app.coffee) file to replace the ParseProvider keys.
-
-Enjoy!
-
-# Development server
-
-  `npm run-script watch`
-
-Access to the application at this address: localhost:8000 (previous ip: http://127.0.0.1:8008)
-The livereload update your browser each time you change source files.
-
-The Frontend source files are into the [src-public](./src-public) directory and compile to the public directory.
-The Backend source files are into the [src-cloud](./src-cloud) directory and compile to the cloud directory.
-
-# Deploy on Parse Cloud
-
-  `npm run-script deploy-parse`
-
-  #If you are having trouble with this, I have found that this also works:
-     'npm run-script watch'
-     'parse deploy'
-     (For some reason, it only works when I do the run-script command first)
-
-# Deploy on Github Pages (alternative)
-
-You can also deploy the frontend on the Github Pages of your repo by launching this command:
-
-  `npm run-script deploy-github`
-
-## Licence
-
-Licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the [Apache 2.0](https://github.com/IronSummitMedia/startbootstrap-agency/blob/gh-pages/LICENSE) license.
