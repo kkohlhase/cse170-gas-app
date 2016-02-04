@@ -34,13 +34,28 @@
       <h1 class="header center orange-text">Gas Tracker</h1>
       <div class="row center">
         <h5 class="header col s12 light">A quantified way of tracking personal vehicle information</h5>
-          <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="700" height="440" src="https://maps.google.com/maps?hl=en&q=La Jolla&ie=UTF8&t=hybrid&z=15&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">
-									embed google map
-							</a></small></div><div><small><a href="http://googlemapsgenerator.com/">Google maps generator</a></small></div></iframe>
           
           
       </div>
       <div class="row center">
+          <style>
+            .google-maps {
+                position: relative;
+                padding-bottom: 75%; // This is the aspect ratio
+                height: 0;
+                overflow: hidden;
+            }
+            .google-maps iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+            }
+        </style>
+          <div class="google-maps">          <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="700" height="440" src="https://maps.google.com/maps?hl=en&q=La Jolla&ie=UTF8&t=hybrid&z=15&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">
+                                    embed google map
+              </a></small></div><div><small><a href="http://googlemapsgenerator.com/">Google maps generator</a></small></div></iframe> </div>
         <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">ADD FILLUP</a>
 
       </div>
@@ -105,14 +120,18 @@
     
   <!-- Modal Structure -->
   <div id="preferences" class="modal">
-    <div class="modal-content">
+    <div class="modal-content container">
+    <div class="row">
+    <div class col s8>
       <h4>Profile</h4>
       <p>A bunch of text</p>
          <form action="#">
-        <p class="range-field">
-          <input type="range" id="test5" min="0" max="100" />
-        </p>
-      </form>
+            <p class="range-field">
+              <input type="range" id="test5" min="0" max="100" />
+            </p>
+          </form>
+        </div>
+        </div>
     </div>
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -129,6 +148,8 @@
       $('.modal-trigger').leanModal();
     });
     </script>
+    
+
 
   </body>
 </html>
