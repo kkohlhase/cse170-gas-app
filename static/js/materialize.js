@@ -13,7 +13,18 @@ if (typeof(jQuery) === 'undefined') {
   } else {
     jQuery = $;
   }
-};/*
+};
+
+
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+
+/*
+
+
+
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
  * Uses the built in easing capabilities added In jQuery 1.1
