@@ -16,13 +16,13 @@
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><i class="material-icons">directions_car</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Frequent Locations</a></li>
-        <li><a class="modal-trigger" href="#preferences">Preferences</a></li>
+        <li><a class="modal-trigger-regular" href="#preferences">Preferences</a></li>
         <li><a href="#">Signout</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#">Frequent Locations</a></li>
-        <li><a class="modal-trigger" href="#preferences">Preferences</a></li>
+        <li><a class="modal-trigger-sidebar" href="#preferences">Preferences</a></li>
         <li><a href="#">Signout</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -134,7 +134,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" id="modal-agree" class="modal-action modal-close waves-effect waves-green btn-flat close-sidebar">Agree</a>
     </div>
   </div>
 
@@ -145,8 +145,12 @@
   <script>
     $(document).ready(function() {
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-      $('.modal-trigger').leanModal();
+      $('.modal-trigger-regular').leanModal();
+        $('.modal-trigger-sidebar').leanModal();
     });
+      
+
+      
     </script>
     
 
