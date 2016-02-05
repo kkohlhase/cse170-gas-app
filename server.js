@@ -11,6 +11,10 @@ var PORT = 3000;
 // that makes nontrivial applications easier to build
 var express = require('express');
 
+//var index = require('./routes/index');
+//var profile = require('./routes/profile');
+//var placeholder = require('./routes/placeholder');
+
 // Create the server instance
 var app = express();
 
@@ -23,6 +27,10 @@ app.use(express.compress());
 // e.g., http://localhost:3000/index.html
 // maps to /static/index.html on this machine
 app.use(express.static(__dirname + '/static'));
+
+//app.get('/', index.view);
+//app.get('/profile', profile.view);
+//app.get('/placeholder', placeholder.view);
 
 // Start the server
 var port = process.env.PORT || PORT; // 80 for web, 3000 for development
