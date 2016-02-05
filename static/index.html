@@ -126,18 +126,50 @@
     <div class="modal-content container">
     <div class="row">
     <div class col s8>
-      <h4>Profile</h4>
-      <p>A bunch of text</p>
+      <h4>Preferences</h4>
+      <p>Distance to Price Favoring</p>
          <form action="#">
             <p class="range-field">
               <input type="range" id="test5" min="0" max="100" />
             </p>
           </form>
+      <div class="input-field col s12">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">87</option>
+          <option value="2">89</option>
+          <option value="3">91</option>
+          <option value="4">Diesel</option>
+        </select>
+        <label>Fuel Type</label>
+      </div>
+        <div class="input-field col s4">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">2014</option>
+        </select>
+        <label>Year</label>
+      </div>
+        <div class="input-field col s4">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Honda</option>
+        </select>
+        <label>Make</label>
+      </div>
+        <div class="input-field col s4">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Civic</option>
+        </select>
+        <label>Model</label>
+      </div>
+    
         </div>
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" id="modal-agree" class="modal-action modal-close waves-effect waves-green btn-flat close-sidebar">Agree</a>
+      <a href="#!" id="modal-agree" class="modal-action modal-close waves-effect waves-green btn-flat close-sidebar">SAVE</a>
     </div>
   </div>
 
@@ -150,6 +182,7 @@
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
       $('.modal-trigger-regular').leanModal();
         $('.modal-trigger-sidebar').leanModal();
+        $('select').material_select();
     });
       
 
