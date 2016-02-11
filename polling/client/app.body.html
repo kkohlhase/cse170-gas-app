@@ -1,0 +1,26 @@
+<body>
+
+  <!-- PULL IN THE POLL CREATION FORM -->
+  <div class="container">
+    <div class="row">
+
+      {{> loginButtons}}
+
+    </div>
+    {{#if currentUser}}
+    <div class="row">
+      <div class="col-md-4">
+        {{ >pollForm }}
+      </div>
+        <!-- LOOP OVER POLLS AND SHOW EACH -->
+      <div class="col-md-8">
+          {{ #each polls }}
+              {{ >poll }}
+          {{ /each }}
+      </div>
+    </div>
+    {{/if}}
+  </div>  
+
+
+</body>
