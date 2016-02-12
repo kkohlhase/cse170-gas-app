@@ -18,25 +18,30 @@
     </div>
   </nav>
 
-  <form>
-    <p class="header col s12 light">Home:</p>
-    <input type="text" style="textarea" name="Home">
-    <p class="header col s12 light">Destination 1:</p>
-    <input type="text" style="textarea" name="Destination 1">
-    <p class="header col s12 light">Destination 2:</p>
-    <input type="text" style="textarea" name="Destination 2">
-    <p class="header col s12 light">Destination 3:</p>
-    <input type="text" style="textarea" name="Destination 3">
+  <form id="addDestForm" role="form" method="get" action="/addDestination">
+      <h3>Add a Destination</h3>
+        <div class="input-field col s12">
+          <input id="name" type="text" class="form-control" name="name">
+          <label for="name">Home, Work, etc.</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="address" type="text" class="form-control" name="address">
+          <label for="address">11 First Street</label>
+        </div>
+      <input type="submit" id="submitBtn" class="btn btn-default" value="Add the Destination"></input>
   </form>
+<br>
+{{#each destinations}}
+<p class="header col s12 light">{{name}}</p>
+<p>{{address}}</p>
+{{/each}}
 
   <p class="header col s18 light" style="font-size:24px;">Expected Mileage:</p>
   <br>
-  <a href="/">
-  <button type="button" class="btn-large waves-effect waves-light orange">Save</button>
-  </a> 
+  
 
   <a href ="/">
-  <button type="button" class="btn-large waves-effect waves-light gray">Cancel</button>
+  <button type="button" class="btn-large waves-effect waves-light orange">Cancel</button>
   </a>
       
   <!--  Scripts-->

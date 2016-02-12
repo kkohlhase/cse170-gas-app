@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var profile = require('./routes/profile');
 var placeholder = require('./routes/placeholder');
 var addfillup = require('./routes/addfillup');
+var adddestination = require('./routes/adddestination');
 // Example route
 // var user = require('./routes/user');
 
@@ -42,6 +43,7 @@ app.get('/', index.view);
 app.get('/profile', profile.viewProfile);
 app.get('/placeholder', placeholder.viewPlaceholder);
 app.get('/addfillup', addfillup.addFillup);
+app.get('/adddestination', adddestination.addDestination);
 // Example route
 // app.get('/users', user.list);
 
