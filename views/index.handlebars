@@ -59,7 +59,7 @@
           
           <p>
 
-        <a href="/placeholder" id="download-button" class="btn-large waves-effect waves-light orange">ADD FILLUP</a>
+        <a href="#fillup" class="btn-large waves-effect waves-light orange modal-trigger-fillup">ADD FILLUP</a>
 
       </div>
       <br><br>
@@ -86,12 +86,11 @@
             <th data-field="name">Gas Station</th>
             <th data-field="address">Address</th>
             <th data-field="price">Price</th>
-            <th data-field="distance">Distance</th>
             </tr>
             </thead>
 
             <tbody>
-            <tr>
+<!--             <tr>
             <td>2/3/2016</td>
             <td>Chevron</td>
             <td>7475 La Jolla Blvd</td>
@@ -105,6 +104,15 @@
             <td>$2.97/regular</td>
             <td>3 miles away</td>
             </tr>    
+            </tbody> -->
+            {{#each fillups}}
+            <tr>
+            <td>{{date}}</td>
+            <td>{{name}}</td>
+            <td>{{address}}</td>
+            <td>{{price}}</td>
+            </tr>
+            {{/each}}
             </tbody>
             </table>
 
@@ -133,6 +141,10 @@
               <input type="range" id="test5" min="0" max="100" />
             </p>
           </form>
+        <div class="input-field col s12">
+          <input id="odometer" type="number" class="validate">
+          <label for="odometer">Odometer Reading</label>
+        </div>
       <div class="input-field col s12">
         <select>
           <option value="" disabled selected>Choose your option</option>
@@ -173,6 +185,38 @@
     </div>
   </div>
 
+    <div id="fillup" class="modal">
+    <div class="modal-content container">
+    <div class="row">
+    <div class col s8>
+      <h4>Preferences</h4>
+      <p>Distance to Price Favoring</p>
+      <form id="addFriendForm" role="form" method="get" action="/addfillup">
+      <h3>Add a Fillup</h3>
+        <div class="input-field col s12">
+          <input id="date" type="text" class="form-control" name="date">
+          <label for="date">Date</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="name" type="text" class="form-control" name="name">
+          <label for="name">Station Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="address" type="text" class="form-control" name="address">
+          <label for="address">Station Address</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="price" type="number" class="form-control" step="0.01" name="price">
+          <label for="price">Price</label>
+        </div>
+      <input type="submit" id="submitBtn" class="btn btn-default" value="Add the Fillup"></input>
+  </form>
+    
+        </div>
+        </div>
+    </div>
+  </div>
+
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
@@ -182,6 +226,7 @@
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
       $('.modal-trigger-regular').leanModal();
         $('.modal-trigger-sidebar').leanModal();
+        $('.modal-trigger-fillup').leanModal();
         $('select').material_select();
     });
       
