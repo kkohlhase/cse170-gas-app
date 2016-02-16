@@ -4,7 +4,9 @@
 			"date" : "2/7/16",
 			"name" : "Chevron",
 			"address" : "7475 La Jolla Blvd",
-			"price" : "2.69"
+			"price" : "40.29",
+			"amount" : "12.5",
+			"note" : "The gas station was really busy"
 		}
 	]
 }

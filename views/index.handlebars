@@ -131,11 +131,11 @@
             </tr>    
             </tbody> -->
             {{#each fillups}}
-            <tr>
+            <tr class='clickable-row'>
             <td>{{date}}</td>
             <td>{{name}}</td>
             <td>{{address}}</td>
-            <td>{{price}}</td>
+            <td>{{calculatePPG price amount}}</td>
             </tr>
             {{/each}}
             </tbody>
@@ -217,7 +217,7 @@
       <form id="addFriendForm" role="form" method="get" action="/addfillup">
       <h3>Add a Fillup</h3>
         <div class="input-field col s12">
-          <input id="date" type="text" class="form-control" name="date">
+          <input type="date" class="datepicker" name="date">
           <label for="date">Date</label>
         </div>
         <div class="input-field col s12">
@@ -230,7 +230,15 @@
         </div>
         <div class="input-field col s12">
           <input id="price" type="number" class="form-control" step="0.01" name="price">
-          <label for="price">Price</label>
+          <label for="price">Total Price</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="amount" type="number" class="form-control" step="0.01" name="amount">
+          <label for="amount">Total Amount</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="note" class="materialize-textarea" length="140"></textarea>
+          <label for="note">Note</label>
         </div>
         <div class="center-align">
           <input type="submit" id="submitBtn" class="btn-large waves-effect waves-light orange" value="Add Fillup"></input>
@@ -246,18 +254,35 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/quantified.js"></script>
   <script>
-    $(document).ready(function() {
-      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-      $('.modal-trigger-regular').leanModal();
-        $('.modal-trigger-sidebar').leanModal();
-        $('.modal-trigger-fillup').leanModal();
-        $('select').material_select();
-    });
-      
+  $(document).ready(function() {
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger-regular').leanModal();
+    $('.modal-trigger-sidebar').leanModal();
+    $('.modal-trigger-fillup').leanModal();
+    $('select').material_select();
+});
+  $('.datepicker').pickadate({
+  selectMonths: true, // Creates a dropdown to control month
+  selectYears: 15 // Creates a dropdown of 15 years to control year
+});
 
-      
-    </script>
+
+  $(document).ready(function($) {
+  $(".clickable-row").click(function() {
+      console.log("clicked");
+      });
+  });
+
+  $("tbody").find(".clickable-row").each(function() { //get all rows in table
+
+      var ratingTdText = $(this).find('td.Rating').text(); 
+      //gets the text out of the rating td for this row
+      alert(ratingTdText);
+
+  });
+  </script>
     
 
 

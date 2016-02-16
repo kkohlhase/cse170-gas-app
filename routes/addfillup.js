@@ -7,7 +7,9 @@ exports.addFillup = function(req, res) { 
     	"date" : req.query.date,
     	"name" : req.query.name,
     	"address" : req.query.address,
-    	"price" : req.query.price
+    	"price" : req.query.price,
+    	"amount" : req.query.amount,
+    	"note" : req.query.note
     };
     data["fillups"].push(newFillup);
     console.log(newFillup);

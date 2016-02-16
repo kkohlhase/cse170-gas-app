@@ -6,7 +6,12 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var exhbs = require('express3-handlebars')
+var hbs = exhbs.create({
+	helpers: {
+		calculatePPG : function(price, amount) {return Math.round((price / amount) * 100) / 100; }
+	}
+});
 
 var index = require('./routes/index');
 var profile = require('./routes/profile');
@@ -20,7 +25,7 @@ var app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
