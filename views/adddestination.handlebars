@@ -14,35 +14,14 @@
 <body>
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><i class="material-icons">directions_car</i></a>
-      <p class="container" style="font-size: 24px;">Profile<p>
+      <p class="container" style="font-size: 24px;">Add New Destination<p>
     </div>
   </nav>
 
-  <form id="addDestForm" role="form" method="get" action="/addDestination">
-      <h3>Add a Destination</h3>
-        <div class="input-field col s12">
-          <input id="name" type="text" class="form-control" name="name">
-          <label for="name">Home, Work, etc.</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="address" type="text" class="form-control" name="address">
-          <label for="address">11 First Street</label>
-        </div>
-      <input type="submit" id="submitBtn" class="btn btn-default" value="Add the Destination"></input>
-  </form>
-<br>
-{{#each destinations}}
-<p class="header col s12 light">{{name}}</p>
-<p>{{address}}</p>
-{{/each}}
-
-  <p class="header col s18 light" style="font-size:24px;">Expected Mileage:</p>
+  <a href="/profile">See updated destinations</a>
   <br>
-  
+  <a href="/">Back</a>
 
-  <a href ="/">
-  <button type="button" class="btn-large waves-effect waves-light orange">Cancel</button>
-  </a>
       
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
