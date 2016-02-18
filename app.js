@@ -9,7 +9,8 @@ var path = require('path');
 var exhbs = require('express3-handlebars')
 var hbs = exhbs.create({
 	helpers: {
-		calculatePPG : function(price, amount) {return Math.round((price / amount) * 100) / 100; }
+		calculatePPG : function(price, amount) {return Math.round((price / amount) * 100) / 100; },
+		calculateMPG : function(miles, amount) {return Math.round((miles / amount) * 10) / 10; }
 	}
 });
 
@@ -18,6 +19,7 @@ var profile = require('./routes/profile');
 var placeholder = require('./routes/placeholder');
 var addfillup = require('./routes/addfillup');
 var adddestination = require('./routes/adddestination');
+var tipshelp = require('./routes/tipshelp');
 // Example route
 // var user = require('./routes/user');
 
@@ -49,6 +51,7 @@ app.get('/profile', profile.viewProfile);
 app.get('/placeholder', placeholder.viewPlaceholder);
 app.get('/addfillup', addfillup.addFillup);
 app.get('/adddestination', adddestination.addDestination);
+app.get('/tipshelp', tipshelp.viewTipsHelp);
 // Example route
 // app.get('/users', user.list);
 

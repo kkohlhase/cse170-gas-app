@@ -17,12 +17,14 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="/profile">Frequent Locations</a></li>
         <li><a class="modal-trigger-regular" href="#preferences">Preferences</a></li>
+        <li><a href="/tipshelp">Tips and Help</a></li>
         <li><a href="/placeholder">Log Out</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="/profile">Frequent Locations</a></li>
         <li><a class="modal-trigger-sidebar" href="#preferences">Preferences</a></li>
+        <li><a href="/tipshelp">Tips and Help</a></li>
         <li><a href="/placeholder">Log Out</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -107,14 +109,16 @@
             <table class="centered">
             <thead>
             <tr>
+            <th>More Info</th>
             <th data-field="date">Date</th>
             <th data-field="name">Gas Station</th>
             <th data-field="address">Address</th>
             <th data-field="price">Price</th>
+            <th data-field="mpg">MPG</th>
             </tr>
             </thead>
 
-            <tbody>
+            <tbody class="tbodz">
 <!--             <tr>
             <td>2/3/2016</td>
             <td>Chevron</td>
@@ -132,10 +136,20 @@
             </tbody> -->
             {{#each fillups}}
             <tr class='clickable-row'>
-            <td>{{date}}</td>
-            <td>{{name}}</td>
-            <td>{{address}}</td>
-            <td>{{calculatePPG price amount}}</td>
+
+  <!-- Dropdown Structure -->
+            <td> <a class='dropdown-button btn' href='#' data-activates='dropdown1'> </a> </td>
+            <td class="date">{{date}}</td>
+            <td class="name">{{name}}</td>
+            <td class="address">{{address}}</td>
+            <td class="price">{{calculatePPG price amount}}</td>
+            <td class="mpg">{{calculateMPG miles amount}}</td>
+            <ul id='dropdown1' class='dropdown-content'>
+            <li> Total Price: {{price}}</li>
+            <li> Total Amount: {{amount}}</li>
+            <li> Total Miles: {{miles}}</li>
+            <li> Note: {{note}}</li>
+            </ul>
             </tr>
             {{/each}}
             </tbody>
@@ -237,6 +251,10 @@
           <label for="amount">Total Amount</label>
         </div>
         <div class="input-field col s12">
+          <input id="miles" type="number" class="form-control" step="0.01" name="miles">
+          <label for="miles">Total Trip Miles</label>
+        </div>
+        <div class="input-field col s12">
           <textarea id="note" class="materialize-textarea" length="140"></textarea>
           <label for="note">Note</label>
         </div>
@@ -244,6 +262,46 @@
           <input type="submit" id="submitBtn" class="btn-large waves-effect waves-light orange" value="Add Fillup"></input>
         </div>
   </form>
+    
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="moreinfo" class="modal">
+    <div class="modal-content container">
+    <div class="row">
+    <div class col s8>
+      <form id="addFriendForm" role="form" method="get" action="/addfillup">
+      <h3>Add a Fillup</h3>
+        <div class="input-field col s12">
+          <input type="date" class="datepicker" name="date">
+          <label for="date">Date</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="name" type="text" class="form-control" name="name">
+          <label for="name">Station Name</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="address" type="text" class="form-control" name="address">
+          <label for="address">Station Address</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="price" type="number" class="form-control" step="0.01" name="price">
+          <label for="price">Total Price</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="amount" type="number" class="form-control" step="0.01" name="amount">
+          <label for="amount">Total Amount</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="note" class="materialize-textarea" length="140"></textarea>
+          <label for="note">Note</label>
+        </div>
+        <div class="center-align">
+          <input type="submit" id="submitBtn" class="btn-large waves-effect waves-light orange" value="Add Fillup"></input>
+        </div>
+    </form>
     
         </div>
         </div>
@@ -271,17 +329,18 @@
 
   $(document).ready(function($) {
   $(".clickable-row").click(function() {
+      console.log($(".price").text());
       console.log("clicked");
       });
   });
 
-  $("tbody").find(".clickable-row").each(function() { //get all rows in table
+  // $(".tbodz").find(".clickable-row").each(function() { //get all rows in table 
+  //     console.log("yooo");
+  //     var ratingTdText = $(this).text(); 
+  //     //gets the text out of the rating td for this row
+  //     alert(ratingTdText);
 
-      var ratingTdText = $(this).find('td.Rating').text(); 
-      //gets the text out of the rating td for this row
-      alert(ratingTdText);
-
-  });
+  // });
   </script>
     
 
