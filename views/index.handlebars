@@ -27,6 +27,7 @@
         <li><a class="modal-trigger-sidebar" href="#preferences">Preferences</a></li>
         <li><a href="/tipshelp">Tips and Help</a></li>
         <li><a href="/placeholder">Log Out</a></li>
+        <li><a class="modal-trigger-regular" href="#help">?</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -113,7 +114,6 @@
             <th>More Info</th>
             <th data-field="date">Date</th>
             <th data-field="name">Gas Station</th>
-            <th data-field="address">Address</th>
             <th data-field="price">Price</th>
             <th data-field="mpg">MPG</th>
             </tr>
@@ -142,13 +142,13 @@
             <td> <a class='dropdown-button btn' href='#' data-activates='dropdown1'> </a> </td>
             <td class="date">{{date}}</td>
             <td class="name">{{name}}</td>
-            <td class="address">{{address}}</td>
-            <td class="price">{{calculatePPG price amount}}</td>
-            <td class="mpg">{{calculateMPG miles amount}}</td>
+            <td class="price">${{calculatePPG price amount}}</td>
+            <td class="mpg">{{calculateMPG miles amount}} mpg</td>
             <ul id='dropdown1' class='dropdown-content'>
-            <li> Total Price: {{price}}</li>
-            <li> Total Amount: {{amount}}</li>
-            <li> Total Miles: {{miles}}</li>
+            <li> Address: {{address}}</li>
+            <li> Total Price: ${{price}}</li>
+            <li> Total Amount: {{amount}} gallons</li>
+            <li> Total Miles: {{miles}} miles</li>
             <li> Note: {{note}}</li>
             </ul>
             </tr>
@@ -183,11 +183,15 @@
           </form>
         <div class="input-field col s12">
           <input id="odometer" type="number" class="validate">
-          <label for="odometer">Odometer Reading of last oil change</label>
+          <label for="odometer">Total Miles</label>
         </div>
         <div class="input-field col s12">
           <input id="expectedmpg" type="number" class="validate">
-          <label for="expectedmpg">Expected mpg</label>
+          <label for="expectedmpg">Expected MPG</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="oil" type="number" class="validate">
+          <label for="oil">Miles at Last Oil Change</label>
         </div>
       <div class="input-field col s12">
         <select>
@@ -275,11 +279,11 @@
         </div>
         <div class="input-field col s12">
           <input id="price" type="number" class="form-control" step="0.01" name="price">
-          <label for="price">Total Price</label>
+          <label for="price">Total Price Paid</label>
         </div>
         <div class="input-field col s12">
           <input id="amount" type="number" class="form-control" step="0.01" name="amount">
-          <label for="amount">Total Amount</label>
+          <label for="amount">Total Amount Filled (Gallons)</label>
         </div>
         <div class="input-field col s12">
           <input id="miles" type="number" class="form-control" step="0.01" name="miles">
