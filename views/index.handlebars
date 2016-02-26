@@ -44,53 +44,7 @@
           
           
       </div>
-      <div class="row center">
-          <style>
-            .map {
-                position: relative;
-                padding-bottom: 75%; // This is the aspect ratio
-                height: 0;
-                overflow: hidden;
-            }
-            .map iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100% !important;
-                height: 100% !important;
-            }
-
-            .scrolloff {
-                pointer-events: none;
-          }
-        </style>
-
-        <script>
-            $(document).ready(function () {
-
-                // you want to enable the pointer events only on click;
-
-                $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
-                $('#canvas1').on('click', function () {
-                    $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
-                });
-
-                // you want to disable pointer events when the mouse leave the canvas area;
-
-                $("#map_canvas1").mouseleave(function () {
-                    $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
-                });
-            });
-        </script>
-
-        <section id="canvas1" class="map">
-             <iframe id="map_canvas1" src="https://maps.google.com/maps?hl=en&q=La Jolla&ie=UTF8&t=hybrid&z=15&iwloc=B&output=embed" width="175" height="110" frameborder="0" style="border: 0"></iframe>
-        </section>
-          
-
-
-          <p>
-
+      
         <a href="#fillup" class="btn-large waves-effect waves-light orange modal-trigger-fillup">ADD FILLUP</a>
 
       </div>
