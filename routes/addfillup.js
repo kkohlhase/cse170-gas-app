@@ -1,7 +1,7 @@
 var data = require("../data.json");
 
 exports.addFillup = function(req, res) { 
-	console.log("hi")
+	console.log("hi");
 	console.log(req.query.date);
     var newFillup = {
     	"date" : req.query.date,

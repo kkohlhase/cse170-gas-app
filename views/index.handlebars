@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+
+
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
@@ -108,7 +111,7 @@
             <h5 class="center">Recent Fillups</h5>
 
             
-            <table class="centered">
+            <table class="centered fillup-fable">
             <thead>
             <tr>
             <th>More Info</th>
@@ -136,14 +139,14 @@
             </tr>    
             </tbody> -->
             {{#each fillups}}
-            <tr class='clickable-row'>
+            <tr>
 
   <!-- Dropdown Structure -->
             <td> <a class='dropdown-button btn' href='#' data-activates='dropdown1'> </a> </td>
-            <td class="date">{{date}}</td>
-            <td class="name">{{name}}</td>
-            <td class="price">${{calculatePPG price amount}}</td>
-            <td class="mpg">{{calculateMPG miles amount}} mpg</td>
+            <td class="date"><a class="dateItem">{{date}}</a></td>
+            <td class="name"><a class="nameItem">{{name}}</a></td>
+            <td class="price"><a class="ppgItem">${{calculatePPG price amount}}</a></td>
+            <td class="mpg"><a class="mpgItem">{{calculateMPG miles amount}} mpg</a></td>
             <ul id='dropdown1' class='dropdown-content'>
             <li> Address: {{address}}</li>
             <li> Total Price: ${{price}}</li>
@@ -167,7 +170,7 @@
     <div class="section">
     </div>
   </div>
-    
+
     
   <!-- Modal Structure -->
   <div id="preferences" class="modal">
@@ -178,19 +181,19 @@
       <p>Distance to Price Favoring</p>
          <form action="#">
             <p class="range-field">
-              <input type="range" id="test5" min="0" max="100" />
+              <input type="range" id="pref" name ="pref" min="0" max="100" />
             </p>
           </form>
         <div class="input-field col s12">
-          <input id="odometer" type="number" class="validate">
+          <input id="odometer" type="number" name="odometer" class="validate">
           <label for="odometer">Total Miles</label>
         </div>
         <div class="input-field col s12">
-          <input id="expectedmpg" type="number" class="validate">
+          <input id="expectedmpg" type="number" name="expectedmpg" class="validate">
           <label for="expectedmpg">Expected MPG</label>
         </div>
         <div class="input-field col s12">
-          <input id="oil" type="number" class="validate">
+          <input id="oil" type="number" name="oil" class="validate">
           <label for="oil">Miles at Last Oil Change</label>
         </div>
       <div class="input-field col s12">
@@ -229,8 +232,19 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" id="modal-agree" class="modal-action modal-close waves-effect waves-green btn-flat close-sidebar">SAVE</a>
+        <input type="submit" id="submitBtn" class="btn-large waves-effect waves-light orange" value="Update Preferences"></input>
     </div>
+    </div>
+  </div>
+
+  <h2 class="fillupHeader">Hi</h2>
+  <div class="container fillupCon">
+      <div class="row center">
+          <div class="col s6">
+
+              <p class="fillupDate"></p>
+          </div>
+      </div>
   </div>
 
 
@@ -302,45 +316,6 @@
         </div>
     </div>
   </div>
-
-  <div id="moreinfo" class="modal">
-    <div class="modal-content container">
-    <div class="row">
-    <div class col s8>
-      <form id="addFriendForm" role="form" method="get" action="/addfillup">
-      <h3>Add a Fillup</h3>
-        <div class="input-field col s12">
-          <input type="date" class="datepicker" name="date">
-          <label for="date">Date</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="name" type="text" class="form-control" name="name">
-          <label for="name">Station Name</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="address" type="text" class="form-control" name="address">
-          <label for="address">Station Address</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="price" type="number" class="form-control" step="0.01" name="price">
-          <label for="price">Total Price</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="amount" type="number" class="form-control" step="0.01" name="amount">
-          <label for="amount">Total Amount</label>
-        </div>
-        <div class="input-field col s12">
-          <textarea id="note" class="materialize-textarea" length="140"></textarea>
-          <label for="note">Note</label>
-        </div>
-        <div class="center-align">
-          <input type="submit" id="submitBtn" class="btn-large waves-effect waves-light orange" value="Add Fillup"></input>
-        </div>
-    </form>
-    
-        </div>
-        </div>
-    </div>
   </div>
 
   <!--  Scripts-->
@@ -348,6 +323,7 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/quantified.js"></script>
+  <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
   <script>
   $(document).ready(function() {
   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -363,11 +339,29 @@
 
 
   $(document).ready(function($) {
-  $(".clickable-row").click(function() {
-      console.log($(".price").text());
-      console.log("clicked");
+//  $(".mpg").click(function() {
+//      console.log($(".mpg").text());
+//      console.log("clicked");
+//      });
+//  });
+      $(function() {
+        var dataTable = $('.fillup-fable').dataTable();
+
+          //TODO MAKE THE ITEMS APPEAR AT THE NEW DIV
+          $('.dateItem').click(function() {
+              var row = $(this).closest('tr').find('td').eq(2).text();
+              console.log(row);
+              updateFillupInfo(row);
+              //var nRow = row[2];
+          })
       });
-  });
+  })
+
+  function updateFillupInfo(text){
+      console.log(text);
+      var current = $('#fillupHeader').text();
+      console.log(current);
+  }
 
   </script>
 

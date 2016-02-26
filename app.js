@@ -20,6 +20,7 @@ var placeholder = require('./routes/placeholder');
 var addfillup = require('./routes/addfillup');
 var adddestination = require('./routes/adddestination');
 var tipshelp = require('./routes/tipshelp');
+var preferences = require('./routes/preferences');
 // Example route
 // var user = require('./routes/user');
 
@@ -52,6 +53,7 @@ app.get('/placeholder', placeholder.viewPlaceholder);
 app.get('/addfillup', addfillup.addFillup);
 app.get('/adddestination', adddestination.addDestination);
 app.get('/tipshelp', tipshelp.viewTipsHelp);
+app.get('/preferences', preferences.updatePref);
 // Example route
 // app.get('/users', user.list);
 
