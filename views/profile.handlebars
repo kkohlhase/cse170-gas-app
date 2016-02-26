@@ -17,7 +17,30 @@
       <!-- <p class="container" style="font-size: 24px;">Profile<p> -->
     </div>
   </nav>
+  <br>
+<h4>Your Destinations:</h4>   
 
+{{#each destinations}}
+<p class="header col s12 light">{{name}}</p>
+<p>{{address}}</p>
+{{/each}}
+
+  <br>
+  
+<a class="modal-trigger-addDest" href ="#addDest">
+  <button type="button" class="btn-large waves-effect waves-light blue">Add a new destination!</button>
+  </a>
+
+  <a href ="/">
+  <button type="button" class="btn-large waves-effect waves-light orange">Cancel</button>
+  </a>
+      
+
+<!-- Modal Structure -->
+ <div id="addDest" class="modal">
+    <div class="modal-content container">
+    <div class="row">
+    <div class col s8>
   <form id="addDestForm" role="form" method="get" action="/addDestination">
       <h3>Add a Destination</h3>
         <div class="input-field col s12">
@@ -30,24 +53,23 @@
         </div>
       <input type="submit" id="submitBtn" class="btn btn-default" value="Add the Destination"></input>
   </form>
-<br>
-{{#each destinations}}
-<p class="header col s12 light">{{name}}</p>
-<p>{{address}}</p>
-{{/each}}
+  </div>
+        </div>
+    </div>
+  </div>
 
-  
-  <br>
-  
 
-  <a href ="/">
-  <button type="button" class="btn-large waves-effect waves-light orange">Cancel</button>
-  </a>
-      
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script>
+  $(document).ready(function() {
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger-addDest').leanModal();
+    $('select').material_select();
+});
+  </script>
 
   </body>
 </html>
