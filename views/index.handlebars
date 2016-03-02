@@ -18,9 +18,9 @@
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><i class="material-icons">directions_car</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/profile">Frequent Locations</a></li>
+        <li><a href="/profile">Frequent Destinations</a></li>
         <li><a class="modal-trigger-regular" href="#preferences">Preferences</a></li>
-        <li><a href="/tipshelp">Tips and Help</a></li>
+        <li><a href="/tipshelp">Tips and More Info</a></li>
         <li><a href="/placeholder">Log Out</a></li>
         <li><a class="modal-trigger-regular" href="#help">?</a></li>
       </ul>
@@ -28,7 +28,7 @@
       <ul id="nav-mobile" class="side-nav">
         <li><a href="/profile">Frequent Destinations</a></li>
         <li><a class="modal-trigger-sidebar" href="#preferences">Preferences</a></li>
-        <li><a href="/tipshelp">Tips and Help</a></li>
+        <li><a href="/tipshelp">Tips and More Info</a></li>
         <li><a href="/placeholder">Log Out</a></li>
         <li><a class="modal-trigger-regular" href="#help">?</a></li>
       </ul>
@@ -140,15 +140,15 @@
           </form>
         <div class="input-field col s12">
           <input id="odometer" type="number" name="odometer" class="validate">
-          <label for="odometer">Total Miles</label>
+          <label for="odometer">Odometer reading (Total Miles):</label>
         </div>
         <div class="input-field col s12">
           <input id="expectedmpg" type="number" name="expectedmpg" class="validate">
-          <label for="expectedmpg">Expected MPG</label>
+          <label for="expectedmpg">Expected MPG:</label>
         </div>
         <div class="input-field col s12">
           <input id="oil" type="number" name="oil" class="validate">
-          <label for="oil">Miles at Last Oil Change</label>
+          <label for="oil">Miles at Last Oil Change:</label>
         </div>
       <div class="input-field col s12">
         <select>
@@ -186,12 +186,12 @@
         </div>
     </div>
     <div class="modal-footer">
-        <input type="submit" id="submitBtn" class="btn-large waves-effect waves-light orange" value="Update Preferences"></input>
+        <a href="#!" id="modal-agree" class="modal-action modal-close waves-effect waves-light orange btn-flat close-sidebar">Update Preferences</a>
     </div>
     </div>
   </div>
 
-  <h2 class="fillupHeader">Hi</h2>
+  <h2 class="fillupHeader"></h2>
   <div class="container fillupCon">
       <div class="row center">
           <div class="col s6">
@@ -219,7 +219,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" id="modal-agree" class="modal-action modal-close waves-effect waves-green btn-flat close-sidebar">Back</a>
+      <a href="#!" id="modal-agree" class="modal-action modal-close waves-effect waves-light orange btn-flat close-sidebar">Back</a>
     </div>
   </div>
 
