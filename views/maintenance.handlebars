@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <title>Gas Tracking - Quantified</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo"><i class="material-icons">directions_car</i></a>
+        <!-- <p class="container" style="font-size: 24px;">Profile<p> -->
+    </div>
+</nav>
+
+<form id="addDestForm" role="form" method="get" action="/addmaintenance">
+    <h3>Add a Destination</h3>
+    <div class="input-field col s12">
+        <input id="name" type="text" class="form-control" name="name">
+        <label for="name">Maintenance Title (Filled Tires, Changed Oil, etc)</label>
+    </div>
+    <div class="input-field col s12">
+        <input id="date" type="text" class="form-control" name="date">
+        <label for="date">Date</label>
+    </div>
+    <div class="input-field col s12">
+        <input id="description" type="text" class="form-control" name="description">
+        <label for="description">Description</label>
+    </div>
+    <input type="submit" id="submitBtn" class="btn btn-default" value="Add the Maintenance"></input>
+</form>
+<br>
+{{#each maintenance}}
+    <p class="header col s12 light">{{name}}</p>
+    <p>{{date}}</p>
+    <p>{{description}}</p>
+{{/each}}
+
+
+<br>
+
+
+<a href ="/">
+    <button type="button" class="btn-large waves-effect waves-light orange">Cancel</button>
+</a>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>

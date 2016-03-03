@@ -21,6 +21,8 @@ var addfillup = require('./routes/addfillup');
 var adddestination = require('./routes/adddestination');
 var tipshelp = require('./routes/tipshelp');
 var preferences = require('./routes/preferences');
+var maintenance = require('./routes/maintenance');
+var addmaintenance = require('./routes/addmaintenance');
 // Example route
 // var user = require('./routes/user');
 
@@ -54,6 +56,8 @@ app.get('/addfillup', addfillup.addFillup);
 app.get('/adddestination', adddestination.addDestination);
 app.get('/tipshelp', tipshelp.viewTipsHelp);
 app.get('/preferences', preferences.updatePref);
+app.get('/maintenance', maintenance.viewMaintenance);
+app.get('/addmaintenance', addmaintenance.addMaintenance);
 // Example route
 // app.get('/users', user.list);
 
