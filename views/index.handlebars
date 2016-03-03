@@ -37,7 +37,7 @@
   </nav>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-      <br><br>
+      <br>
       <h1 class="header center orange-text">Gas Tracker</h1>
       <div class="row center">
         <h5 class="header col s12 light">A quantified way of tracking personal vehicle information</h5>
@@ -47,10 +47,45 @@
 
 
       </div>
-      <br><br>
+      
 
     </div>
   </div>
+
+  <div class="row center">
+  <p> Your recommended gas station is here:</p>
+</div>
+
+  <div class="row center">
+          <style>
+            
+
+            .scrolloff {
+                pointer-events: none;
+          }
+        </style>
+
+        <script>
+            $(document).ready(function () {
+
+                // you want to enable the pointer events only on click;
+
+                $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
+                $('#canvas1').on('click', function () {
+                    $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
+                });
+
+                // you want to disable pointer events when the mouse leave the canvas area;
+
+                $("#map_canvas1").mouseleave(function () {
+                    $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+                });
+            });
+        </script>
+
+        <section id="canvas1" class="map">
+             <iframe id="map_canvas1"  src="https://www.google.com/maps/embed/v1/place?q=Mobil,+3233+La+Jolla+Village+Drive,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" width="380" height="300" frameborder="0" style="border: 0"></iframe>
+        </section>
 
 
   <div class="container">
@@ -59,7 +94,7 @@
       <!--   Icon Section   -->
       <div class="row center">
         <div class="header col s12 light">
-                <a href="#fillup" class="btn-large waves-effect waves-light orange modal-trigger-fillup">ADD FILLUP</a>
+                <a href="#fillup" class="btn-large waves-effect waves-light orange modal-trigger-fillup">ADD A FILLUP</a>
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">local_gas_station</i></h2>
             <h5 class="center">Recent Fillups</h5>
@@ -209,10 +244,10 @@
     <div class col s8>
       <h4>Help Page</h4>
       <p>Click the "Add Fill-up" button below to add a recent fill up</p>
-      <p>To set your destinations used in calculating the best gas station for you, click "Frequent Locations" to manage your destinations</p>
+      <p>To set your destinations used in calculating the best gas station for you, click "Frequent Destinations" to manage your destinations</p>
       <p>For settings such as how much you value money vs. time, click "Preferences".</p>
-      <p>The "Tips and Help" page contains tips and tricks recommended for you to get maximize your automobile experience</p>
-      <p>The waypoint on the map below marks your recommended gas station, while the star represents your current location.</p>
+      <p>The "Tips and More Info" page contains tips and tricks recommended for you to get maximize your automobile experience as well as charts to see data on your driving habits!</p>
+      <p>The waypoint on the map below marks your recommended gas station.</p>
          
     
         </div>
