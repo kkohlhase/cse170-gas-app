@@ -58,7 +58,20 @@
 
   <div class="row center">
           <style>
-            
+            .map {
+                position: relative;
+                padding-bottom: 75%; // This is the aspect ratio
+                height: 0;
+                overflow: hidden;
+            }
+            .map iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+                padding: 30px;
+            }
 
             .scrolloff {
                 pointer-events: none;
@@ -103,11 +116,15 @@
             <table class="centered fillup-fable">
             <thead>
             <tr>
-            <th>More Info</th>
             <th data-field="date">Date</th>
             <th data-field="name">Gas Station</th>
-            <th data-field="price">Price</th>
+            <th data-field="ppg">PPG</th>
             <th data-field="mpg">MPG</th>
+            <th data-field="address">Address</th>
+            <th data-field="price">Total</th>
+            <th data-field="amount">Amount</th>
+            <th data-field="miles">Miles</th>
+            <th data-field="note">Note</th>
             </tr>
             </thead>
 
@@ -129,20 +146,15 @@
             </tbody> -->
             {{#each fillups}}
             <tr>
-
-  <!-- Dropdown Structure -->
-            <td> <a class='dropdown-button btn' href='#' data-activates='dropdown1'> </a> </td>
-            <td class="date"><a class="dateItem">{{date}}</a></td>
-            <td class="name"><a class="nameItem">{{name}}</a></td>
-            <td class="price"><a class="ppgItem">${{calculatePPG price amount}}</a></td>
-            <td class="mpg"><a class="mpgItem">{{calculateMPG miles amount}} mpg</a></td>
-            <ul id='dropdown1' class='dropdown-content'>
-            <li> Address: {{address}}</li>
-            <li> Total Price: ${{price}}</li>
-            <li> Total Amount: {{amount}} gallons</li>
-            <li> Total Miles: {{miles}} miles</li>
-            <li> Note: {{note}}</li>
-            </ul>
+            <td class="date">{{date}}</td>
+            <td class="name">{{name}}</td>
+            <td class="ppg">${{calculatePPG price amount}}</td>
+            <td class="mpg">{{calculateMPG miles amount}}</td>
+            <td class="address">{{address}}</td>
+            <td class="price">${{price}}</td>
+            <td class="amount">{{amount}} gallons</td>
+            <td class="miles">{{miles}} miles</td>
+            <td class="note">{{note}}</td>
             </tr>
             {{/each}}
             </tbody>
@@ -335,7 +347,9 @@
 //      });
 //  });
       $(function() {
-        var dataTable = $('.fillup-fable').dataTable();
+        var dataTable = $('.fillup-fable').dataTable({
+          "scrollX" : true
+        });
 
           //TODO MAKE THE ITEMS APPEAR AT THE NEW DIV
           $('.dateItem').click(function() {
