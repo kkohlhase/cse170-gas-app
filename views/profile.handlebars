@@ -39,12 +39,12 @@
  <div id="addDest" class="modal">
     <div class="modal-content container">
     <div class="row">
-    <div class col s8>
+    <div class="col s12">
   <form id="addDestForm" role="form" method="get" action="/addDestination">
       <h3>Add a Destination</h3>
         <div class="input-field col s12">
           <input id="name" type="text" class="form-control" name="name">
-          <label for="name">Name for your destination: i.e. Home, Work, etc.</label>
+          <label for="name">Name for your destination:</label>
         </div>
         <div class="input-field col s12">
           <input id="address" type="text" class="form-control" name="address">
@@ -59,22 +59,28 @@
 <br>
 </br>
       <div class="row center">
+        <div class="col s12">
           <style>
             .map {
-                
+                position: relative;
+                padding-bottom: 75%; // This is the aspect ratio
+                height: 0;
+                overflow: hidden;
             }
             .map iframe {
                 position: absolute;
-                top: 150px;
-                left: 575px;
-                width: 50% !important;
-                height: 50% !important;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+                padding: 30px;
             }
 
             .scrolloff {
                 pointer-events: none;
           }
         </style>
+
 
         <script>
             $(document).ready(function () {
@@ -97,6 +103,8 @@
         <section id="canvas1" class="map">
              <iframe id="map_canvas1" src="https://www.google.com/maps/embed/v1/place?q=University+of+California+San+Diego,+San+Diego,+CA,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" width="175" height="110" frameborder="0" style="border: 0"></iframe>
         </section>
+        </div>
+        </div>
           
 
 
