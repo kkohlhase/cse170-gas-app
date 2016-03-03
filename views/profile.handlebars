@@ -118,7 +118,26 @@
   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
   $('.modal-trigger-addDest').leanModal();
     $('select').material_select();
+    initializePage();
 });
+
+
+      function projectClick(e) {
+          // prevent the page from reloading 
+          e.preventDefault();
+          // In an event handler, $(this) refers to 
+          // the object that triggered the event 
+          console.log("clicked");
+          ga("send", "event", 'buttonclicked', 'destinationadd');
+      }
+
+      /*
+       * Function that is called when the document is ready.
+       */
+      function initializePage() {
+          // your code here
+          $(".submitBtn").click(projectClick);
+      }
   </script>
   {{> googleAnalytics}}
   </body>
