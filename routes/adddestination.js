@@ -10,5 +10,5 @@ exports.addDestination = function(req, res) { 
     };
     destinations["destinations"].push(newDestination);
     console.log(newDestination);
-    res.render('addDestination', destinations);
+    res.render('profile', destinations);
 };

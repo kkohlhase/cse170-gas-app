@@ -10,5 +10,5 @@ exports.addMaintenance = function(req, res) {
         "description" : req.body.description
     };
     maintenance["maintenance"].push(newMaintenance);
-    res.render('addmaintenance', maintenance);
+    res.render('maintenance', maintenance);
 };

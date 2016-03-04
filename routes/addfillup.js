@@ -14,5 +14,5 @@ exports.addFillup = function(req, res) { 
     };
     data["fillups"].push(newFillup);
     console.log(newFillup);
-    res.render('addFillup', data);
+    res.render('index', data);
 };
